@@ -8,7 +8,7 @@
 
 	<!-- 配置业务逻辑层 -->
 	<bean id="userService" class="com.itrust.service.UserService">
-		<property name="userDao" ref="userDao"></property>
+		<!-- <property name="userDao" ref="userDao"></property> -->
 	</bean>
 
 </beans>
