@@ -2,7 +2,6 @@ package com.itrust.controller;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.log4j.Logger;
 
 import com.itrust.bean.User;
 import com.itrust.mapper.UserMapper;
@@ -17,6 +16,10 @@ public class MybatisTest {
 		UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 		User user = userMapper.findById(1);
 		System.out.println(user.getUsername());
+		user.setId(2);
+		user.setUsername("lalla");
+//		userMapper.insertUser(user);
+		sqlSession.commit();
 		sqlSession.close();
 	}
 

@@ -26,13 +26,6 @@
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/commons-lang-2.6.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/commons-logging-1.1.3.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/commons-pool2-2.0.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/cwap-s-cache-2.0.1.0.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/cwap-s-domain-2.0.1.0.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/cwap-s-job-2.0.2.0.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/cwap-s-spi-2.0.3.0.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/cwap-s-stp-2.0.2.0.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/cwap-s-util-2.0.6.0.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/cwap-s-web-2.0.6.0.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/derby-10.10.1.1.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/dom4j-1.6.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/druid-1.0.9.jar"/>
