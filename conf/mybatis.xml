@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver" />
 				<property name="url"
-					value="jdbc:mysql://localhost:3306/test?characterEncoding=utf-8" />
+					value="jdbc:mysql://120.26.224.51:3306/itrust?characterEncoding=utf-8" />
 				<property name="username" value="itrust" />
 				<property name="password" value="itrust" />
 			</dataSource>
