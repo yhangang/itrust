@@ -31,6 +31,15 @@
 function submit(){
 	document.forms[0].submit();
 }
+function register(){
+	document.forms[1].submit();
+}
+<%  if(request.getAttribute("logerror")!=null){%>
+alert("用户名、密码不匹配，登录失败！");
+<%} %>
+<%  if(request.getAttribute("register")!=null){%>
+alert("注册成功，请登录！");
+<%} %>
 </script>
 
 <body>
@@ -56,11 +65,15 @@ function submit(){
       <li><a href="#" class="scroll-link" data-id="contact">联系我们</a></li>
       <li><a style="cursor:pointer;" id="loginpopup">登录/注册</a></li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%
-        if(request.getAttribute("user")!=null)
-        	out.print(request.getAttribute("user"));
-        else out.print("游客");
-        %><b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <%
+        if(session.getAttribute("user")!=null){%>
+		${user}
+		<%}
+			else 
+				out.print("游客");
+		%>
+		<b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li><a href="#">我的账户</a></li>
           <li><a href="#">我的服务</a></li>
@@ -118,18 +131,20 @@ function submit(){
 	        <h4 class="modal-title" id="myModalLabel2">用户注册</h4>
 	      </div>
 	      <div class="modal-body" id="signup_details">
-	        <span >Full Name</span>
-	        <input type="text" placeholder="Full Name" name="register_name" /> </br></br>
-	        *<span >Email</span>
-	        <input type="text" placeholder="example@gmail.com" name="register_email" /></br></br>
-	        *<span >Password</span>
-	        <input type="password" placeholder="Password" name="register_password" /></br></br>
-	        *<span >Password Re-Type</span>
-	        <input type="password" placeholder="Re-type Password" name="re_register_password" />
+	      <form name="regForm" action="register.do" method="post">
+	        *<span >用户名</span>
+	        <input type="text" placeholder="username" name="username" /> </br></br>
+	        *<span >密码</span>
+	        <input type="password" placeholder="password" name="password" /></br></br>
+	        *<span >重复密码</span>
+	        <input type="password" placeholder="password" name="password2" /></br></br>
+	        *<span >真实姓名</span>
+	        <input type="text" placeholder="真实姓名" name="realname" />
+	        </form>
 	      </div>
 	      <div class="modal-footer" >
-		<input style="float: left" type="button" class="btn btn-success"  value="Sign Me Up" /> 
-	       <span>&nbsp;&nbsp;&nbsp; Already a member? </span><span id="login-link" class="text-info" style="cursor:pointer;">  Login now  </span> 
+		<input style="float: left" type="button" class="btn btn-success"  value="注册" onclick="register()"/> 
+	       <span>&nbsp;&nbsp;&nbsp; 已有账号? </span><span id="login-link" class="text-info" style="cursor:pointer;">  点击登录 </span> 
 		 </div>
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->

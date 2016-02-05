@@ -17,6 +17,9 @@ public interface UserMapper {
 	@Select("select * from t_user where id = #{id}")
 	public User findById(int id);
 	
+	@Select("select * from t_user where username = #{username}")
+	public User findByUsername(String username);
+	
 	@Delete("delete from t_user where id = #{id}")
 	public void deleteUser(int id);
 }

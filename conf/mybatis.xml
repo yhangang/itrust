@@ -3,7 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	<!-- 和spring整合后 environments配置将废除 -->
+	<!-- 若和spring整合， environments配置将废除 -->
 	<environments default="development">
 		<environment id="development">
 			<!-- 使用jdbc事务管理 -->

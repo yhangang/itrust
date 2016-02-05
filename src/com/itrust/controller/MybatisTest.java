@@ -14,13 +14,13 @@ public class MybatisTest {
 		SqlSessionFactory sqlSessionFactory = MybatisUtil.getSqlSessionFactory();
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-		User user = userMapper.findById(1);
+		User user = userMapper.findByUsername("admin");
 		System.out.println(user.getUsername());
 		user.setId(2);
 		user.setUsername("lalla");
 //		userMapper.insertUser(user);
-		sqlSession.commit();
-		sqlSession.close();
+//		sqlSession.commit();
+//		sqlSession.close();
 	}
 
 }
