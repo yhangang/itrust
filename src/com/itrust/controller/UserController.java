@@ -1,5 +1,7 @@
 package com.itrust.controller;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -10,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.itrust.bean.User;
 import com.itrust.service.UserService;
+import com.itrust.util.AjaxUtil;
 import com.itrust.util.JsonUtil;
 
 @Controller
@@ -22,6 +25,8 @@ public class UserController {
 		HttpSession session = resquest.getSession();
 		String username = resquest.getParameter("username");
 		String password = resquest.getParameter("password");
+		System.out.println(username);
+		System.out.println(password);
 		User loginUser = new User();
 		loginUser.setUsername(username);
 		loginUser.setPwd(password);
@@ -61,4 +66,17 @@ public class UserController {
 		return model;
 	}
 
+	@RequestMapping("/logintest")
+	public void logintest(HttpServletRequest resquest,
+			HttpServletResponse response) throws IOException {
+		String username = resquest.getParameter("username");
+		String password = resquest.getParameter("password");
+		System.out.println(username);
+		System.out.println(password);
+		User loginUser = new User();
+		loginUser.setUsername(username);
+		loginUser.setPwd(password);
+		User user = userService.login(loginUser);
+		AjaxUtil.transferJson(response, JsonUtil.toJson(user));
+	}
 }

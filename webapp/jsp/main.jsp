@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,8 +20,9 @@
     <!-- Add custom CSS here -->
     <link href="css/custom.css" rel="stylesheet">
     <!-- JavaScript -->
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
     <script src="js/custom.js"></script>
 
 </head>
@@ -42,7 +42,7 @@ alert("注册成功，请登录！");
 <%} %>
 </script>
 
-<body>
+<body  ng-app="mainApp" ng-controller="mainCtrl">
 
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
@@ -66,13 +66,7 @@ alert("注册成功，请登录！");
       <li><a style="cursor:pointer;" id="loginpopup">登录/注册</a></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <%
-        if(session.getAttribute("user")!=null){%>
-		${user}
-		<%}
-			else 
-				out.print("游客");
-		%>
+		{{user.username}} 
 		<b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li><a href="#">我的账户</a></li>
@@ -95,7 +89,7 @@ alert("注册成功，请登录！");
   </nav>
   <!-- Code for Login / Signup Popup -->
   <!-- Modal Log in -->
-	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+	<div  class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
 	  <div class="modal-dialog" style="margin-top: 150px;">
 	    <div class="modal-content">
 	      <div class="modal-header">
@@ -103,16 +97,16 @@ alert("注册成功，请登录！");
 	        <h4 class="modal-title" id="myModalLabel1">用户登录</h4>
 	      </div>
 	      <div class="modal-body" id="login_details">
-	        <span> 已有账户? </span> </br></br>
-	        <form name="loginForm" action="login.do" method="post">
+	        <span> 已有账户</span> </br></br>
+	        <form id="loginForm" name="loginForm" action="login.do" method="post" novalidate>
 	        *<span style="font-weight:bold;">用户名</span><br />
-	        <input type="text" placeholder="username" name="username" /><br /></br>
+	        <input type="text" placeholder="username" name="username" ng-model="formData.username"/><br /></br>
 	        *<span style="font-weight:bold;" >密码</span><br />
-	        <input type="password" placeholder="Password" name="password" /><br />
+	        <input type="password" placeholder="Password" name="password" ng-model="formData.password"/><br />
 	        </form>
 	      </div>
 	      <div class="modal-footer" >
-			<input style="float: left" type="button" class="btn btn-success" value="登录" onclick="submit()"/> 
+			<input style="float: left" type="button" class="btn btn-success" value="登录" ng-click="submitForm()"/> 
 	       <span class="fp-link"> <a href="#">忘记密码?</a></span>
 	       </br></br>
 			<span> 还不是会员?</span>
@@ -303,6 +297,7 @@ alert("注册成功，请登录！");
         </div>
     </footer>
 
+		<script src="js/controller.js"></script>
 </body>
 
 </html>
