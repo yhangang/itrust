@@ -15,9 +15,9 @@ public class MybatisTest {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 		User user = userMapper.findByUsername("admin");
-		System.out.println(user.getUsername());
-		user.setId(2);
-		user.setUsername("lalla");
+		System.out.println(user.getRealname());
+//		user.setId(2);
+//		user.setUsername("lalla");
 //		userMapper.insertUser(user);
 //		sqlSession.commit();
 //		sqlSession.close();
