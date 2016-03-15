@@ -291,7 +291,7 @@ alert("注册成功，请登录！");
                         <li><a href="#contact">联系我们</a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted small">Copyright &copy; HangYang MengyuLu 2016. All Rights Reserved. </p>
+                    <p class="copyright text-muted small">Copyright &copy; HangYang 2016. All Rights Reserved. </p>
                 </div>
             </div>
         </div>

@@ -1,3 +1,4 @@
+//angularjs代码
 //获取页面app对象
 var mainApp = angular.module('mainApp', []);
 
@@ -24,3 +25,7 @@ mainApp.controller('mainCtrl', function($scope, $http) {
 
 	};
 });
+
+//jquery代码
+$("#navigation").load("view/navigation.html");
+$("#footer").load("view/footer.html");
