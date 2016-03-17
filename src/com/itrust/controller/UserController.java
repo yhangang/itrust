@@ -19,6 +19,7 @@ import com.itrust.util.JsonUtil;
 public class UserController {
 	UserService userService = new UserService();
 	
+	
 	@RequestMapping("/login")
 	public ModelAndView login(HttpServletRequest resquest,
 			HttpServletResponse response) {
