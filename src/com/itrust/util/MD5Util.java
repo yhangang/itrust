@@ -16,7 +16,7 @@ public class MD5Util {
 	     //获得密文  
 	            byte[] md = mdInst.digest();  
 	     //把密文转换成十六进制的字符串形式  
-	            int j = md.length;  
+	            int j = md.length;
 	            char str[] = new char[j * 2];  
 	            int k = 0;  
 	            for (int i = 0; i < j; i++) {  
