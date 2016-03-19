@@ -14,8 +14,8 @@ public class UserService {
 	 * 
 	 * @param user
 	 */
-	public void register(User user) {
-		dao.save(user);
+	public int register(User user) {
+		return dao.save(user);
 	}
 
 	/**
@@ -42,5 +42,16 @@ public class UserService {
 		}
 
 	}
+	
+	/**
+	 * 按username查询用户
+	 * 
+	 * @param user
+	 * @return
+	 */
+	public User findUserByUsername(User user) {
+		return dao.find(user);
+	}
+
 
 }

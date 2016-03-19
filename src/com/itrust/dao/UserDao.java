@@ -13,12 +13,18 @@ public class UserDao {
 	 * 新建用户
 	 * @param user
 	 */
-	public void save(User user){
+	public int save(User user){
+		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-		userMapper.insertUser(user);
+		try{
+			result=userMapper.insertUser(user);
+		}catch(Exception e){
+			System.out.println("插入用户记录失败！");
+		}
 		sqlSession.commit();
 		sqlSession.close();
+		return result;
 	}
 	
 	/**

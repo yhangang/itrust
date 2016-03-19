@@ -20,14 +20,15 @@ $(document).ready(function() {
         fields: {
         	username: {
                 message: 'The username is not valid',
+                trigger: 'blur',
                 validators: {
                     notEmpty: {
-                        message: 'The username is required and cannot be empty'
+                        message: '用户名不能为空'
                     },
                     stringLength: {
                         min: 3,
                         max: 30,
-                        message: 'The username must be more than 3 and less than 30 characters long'
+                        message: '用户名长度为3-30'
                     }/*,
                     regexp: {
                         regexp: /^[a-zA-Z0-9_]+$/,
@@ -36,9 +37,10 @@ $(document).ready(function() {
                 }
             },
             password: {
+            	trigger: 'blur',
                 validators: {
                     notEmpty: {
-                        message: 'The password is required and cannot be empty'
+                        message: '密码不能为空'
                     }
                 }
             }
