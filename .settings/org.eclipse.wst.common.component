@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="itrust">
+    <wb-module deploy-name="tzjz">
         <wb-resource deploy-path="/" source-path="/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/conf"/>
-        <property name="context-root" value="itrust"/>
-        <property name="java-output-path" value="/itrust/build/classes"/>
+        <property name="java-output-path" value="/tzjz/build/classes"/>
+        <property name="context-root" value="tzjz"/>
     </wb-module>
 </project-modules>
